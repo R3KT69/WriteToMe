@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>< WriteToMe ></title>
+    <link rel="stylesheet" href="includes/style.css">
+    <style>
+        @font-face {
+            font-family: font1;
+            src: url(Linebeam.ttf);
+        }
+
+        @font-face {
+            font-family: font2;
+            src: url(alagard.ttf);
+        }
+
+        ::selection {
+            color: black; 
+            background: rgb(128, 0, 107); 
+        }
+
+
+        body {
+            background-color: black;
+            font-family: font1;
+            text-align: center;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: auto;
+            cursor: default;
+        }
+
+        /* Label and input and form */
+
+        form {
+            animation: fadeIn5 2s 4s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn5 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .label {
+            color: rgb(128, 0, 107);
+            opacity: 100%;
+            font-size: 50px;
+            position: fixed;
+            transform: translateY(-150px);
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        textarea {
+            font-family: font1;
+            font-size: 30px;
+            padding: 10px;
+            background-color: black;
+            border: 2px solid rgb(73, 0, 61);
+            border-radius: 10px;
+            color: rgb(128, 0, 107);
+            text-align: left;
+            height: 290px;
+            width: 350px;
+            resize: none;
+            position: fixed;
+            transform: translateY(25px);
+            left: 0;
+            right: 0;
+            margin: auto;
+            outline: none;
+        }
+
+        textarea:focus {
+            border: 2px solid rgb(128, 0, 107);
+        }
+
+        textarea::-webkit-scrollbar {
+            width: 10px;
+            border-radius: 10px;
+        }
+
+        textarea::-webkit-scrollbar-track {
+            background: #000000;
+            border-radius: 10px;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+            background: rgb(128, 0, 107);
+            border-radius: 10px;
+        }
+
+        textarea::-webkit-scrollbar-thumb:hover {
+            background: rgb(128, 0, 107);
+        }
+
+        button {
+            color: rgb(128, 0, 107);
+            font-family: font1;
+            font-size: 30px;
+            padding: 15px;
+            background-color: black;
+            position: fixed;
+            transform: translateY(300px);
+            border: solid 2px rgb(128, 0, 107);
+            left: 0;
+            right: 0;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            color: rgba(128, 0, 107, 0.75);
+        }
+
+        ::placeholder {
+            color: rgb(104, 0, 88);
+            font-size: 30px;
+            text-align: left;
+        }
+
+
+        /* Intro Text */
+
+        .fade-in2 {
+            color: rgb(128, 0, 107);
+            position: fixed;
+            transform: translateY(-200px);
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-size: 50px;
+            animation: fadeIn2 2s 3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn2 
+        {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Hello Text */
+
+        .fade-in {
+            color: rgb(128, 0, 107);
+            position: fixed;
+            left: 0; 
+            right: 0; 
+            margin: auto;
+            font-size: 100px;
+            animation: fadeIn 2s forwards, transf 3s 2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+            opacity: 0;
+            }
+            100% {
+            opacity: 1;
+            }
+
+
+        }
+
+        @keyframes transf {
+            0% {
+                transform: translateY(0); 
+            }
+            100% {
+                transform: translateY(-300px); 
+            }
+        }
+
+        /*Png Works*/
+        .img-container {
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin-right: 50px;
+            
+        }
+
+        .icon4 {
+            width: 48px;
+            height: 48px;
+        }
+
+        img {
+            animation: fadeIn3 2s 2s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn3{
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        img:hover {
+            opacity: 0.5 !important;
+        }
+        /*Png work ends here*/
+
+        .img-container a {
+            text-decoration: none; 
+            display: absolute;
+        }
+
+        .socials {
+            color: rgb(128, 0, 107);
+            font-size: 50px;
+            animation: fadeIn4 2s 2s forwards;
+            opacity: 0;
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            padding-bottom: 75px;
+        }
+
+        @keyframes fadeIn4 {
+            0% {
+            opacity: 0;
+            }
+            100% {
+            opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .fade-in2 {
+                font-size: 30px;
+                padding: 25px;
+            }
+
+            .fade-in {
+                font-size: 50px;
+            }
+
+            .label {
+                font-size: 30px;
+            }
+
+            textarea {
+                width: 300px;
+            }
+
+            button {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            textarea {
+                width: 250px;
+            }
+            button {
+                width: 250px;
+            }
+
+            .icon {
+                margin-right: 25px;
+            }
+
+            .img-container {
+                padding-bottom: 25px;
+            }
+        }
+
+        @media (max-height: 800px) {
+            @keyframes transf {
+                0% {
+                    transform: translateY(0); 
+                }
+                100% {
+                    transform: translateY(-265px); 
+                }
+            }
+            .socials {
+                display: none;
+            }
+
+            .icon {
+                margin-right: 25px;
+            }
+
+            .img-container {
+                padding-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="fade-in">Hello!</p>
+    <p class="fade-in2">Im _r3kt, a.k.a Asif Ahmed</p>
+    <form action="includes/Success.php" method="post">
+        <p class="label">Comment Profile:</label> <br>
+        <textarea name="response" placeholder="Write whatever you want..."></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <p class="socials">Socials</p>
+    <div class="img-container">
+        <a href="https://steamcommunity.com/id/r3kt_69/" target="_blank">
+            <img class="icon" src="includes/icons/steam.png" alt="Steam">
+        </a>
+        <a href="https://discord.gg/fTb9tGuGqh" target="_blank">
+            <img class="icon" src="includes/icons/discord.png" alt="Discord">
+        </a>
+        <a href="https://www.faceit.com/en/players/_r3kt69" target="_blank">
+            <img class="icon" src="includes/icons/faceit.png" alt="Faceit">
+        </a>
+        <a href="https://github.com/R3KT69" target="_blank">
+            <img class="icon4" src="includes/icons/github.png" alt="GitHub">
+        </a>
+    </div>
+</body>
+</html>
